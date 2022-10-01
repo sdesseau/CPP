@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:21:16 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/23 21:30:44 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:15:30 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,35 @@ public:
 	Fixed(const float floatValue);
 	Fixed(const int value);
 	Fixed(Fixed const &fixed);
-	Fixed &operator=(Fixed const &a);
-	Fixed &operator-(Fixed const &a);
-	Fixed &operator+(Fixed const &a);
-	Fixed &operator*(Fixed const &a);
-	Fixed &operator/(Fixed const &a);
 	~Fixed();
+	Fixed &operator=(Fixed const &a);
+	
+	bool operator>(Fixed const &a);
+	bool operator<(Fixed const &a);
+	bool operator<=(Fixed const &a);
+	bool operator>=(Fixed const &a);
+	bool operator==(Fixed const &a);
+	bool operator!=(Fixed const &a);
+	
+	Fixed operator-(Fixed const &a);
+	Fixed operator+(Fixed const &a);
+	Fixed operator*(Fixed const &a);
+	Fixed operator/(Fixed const &a);
+	
+	Fixed operator++();
+	Fixed operator++(int);
+	Fixed operator--();
+	Fixed operator--(int);
+	
 	int		toInt(void) const;
 	float 	toFloat() const;
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
+
+	static Fixed const& min(Fixed const &a, Fixed const &b);
+	static Fixed const& max(Fixed const &a, Fixed const &b);
+	static Fixed& min(Fixed &a, Fixed &b);
+	static Fixed& max(Fixed &a, Fixed &b);
 
 private:
 	int _fixedValue;

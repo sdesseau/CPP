@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 21:01:09 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/26 21:15:53 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/09/27 13:16:37 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "FragTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ClapTrap("_clap_name"), FragTrap(), ScavTrap() {
-    std::cout << "DiamondTrap default constructor" << std::endl;
+    std::cout << "DiamondTrap default constructor" << std::endl << std::endl;
     this->Hit = 100;
     this->EnergyPoints = 50;
     this->AttackDamage = 30;
@@ -27,7 +27,7 @@ DiamondTrap::~DiamondTrap() {
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const& other) : ClapTrap(other), FragTrap(other), ScavTrap(other) {
-    std::cout << "DiamondTrap copy constructor called" << std::endl;
+    std::cout << "DiamondTrap copy constructor called" << std::endl << std::endl;
     this->_name = other._name;
     this->Hit = other.Hit;
     this->EnergyPoints = other.EnergyPoints;
@@ -35,14 +35,14 @@ DiamondTrap::DiamondTrap(DiamondTrap const& other) : ClapTrap(other), FragTrap(o
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name + "_clap_name"), ScavTrap(name) {
-    std::cout << "DiamondTrap constructor called" << std::endl;
+    std::cout << "DiamondTrap constructor called" << std::endl << std::endl;
     this->Hit = 100;
     this->EnergyPoints = 50;
     this->AttackDamage = 30;
 }
 
 DiamondTrap& DiamondTrap::operator=(DiamondTrap const& src) {
-    std::cout << "Assignation DiamondTrap operator called" << std::endl;
+    std::cout << "Assignation DiamondTrap operator called" << std::endl << std::endl;
     this->_name = src.Name;
     this->Hit = src.Hit;
     this->EnergyPoints = src.EnergyPoints;
@@ -51,5 +51,16 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap const& src) {
 }
 
 void DiamondTrap::whoAmI() {
-    std::cout << "I am DiamondTrap and ClapTrap named " << this->ClapTrap::Name << std::endl;
+    std::cout << "I am DiamondTrap " << this->_name << " and a ClapTrap named " << this->ClapTrap::Name << std::endl << std::endl;
+}
+
+std::string DiamondTrap::getName() const { return (this->Name); }
+int DiamondTrap::getHit() const { return  (this->Hit); }
+int DiamondTrap::getEnergyPoints() const { return (this->EnergyPoints); }
+int DiamondTrap::getAttackDamage() const { return (this->AttackDamage); }
+
+std::ostream&	operator<<(std::ostream & ostream, DiamondTrap const & src)
+{
+	ostream << "Hp: " << src.getHit() << " Ep: " << src.getEnergyPoints() << " Ad: " << src.getAttackDamage();
+	return (ostream);
 }

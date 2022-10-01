@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 21:01:10 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/26 21:15:20 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/09/27 13:15:58 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,14 @@ class DiamondTrap : public FragTrap, public ScavTrap
         using FragTrap::Hit; //100 hp ok
 		using FragTrap::AttackDamage; //30 ok
 		using ScavTrap::EnergyPoints; //50 ep ok
-		using ScavTrap::attack; // "... uses a super ScavTrap attack on ..." ok
+		using ScavTrap::attack; // ScavTrap attack ok
+		std::string getName() const;
+		int getHit() const;
+		int getEnergyPoints() const;
+		int getAttackDamage() const;
+		
 	private:
 		std::string _name;
 };
+
+std::ostream&	operator<<(std::ostream & ostream, DiamondTrap const & src);

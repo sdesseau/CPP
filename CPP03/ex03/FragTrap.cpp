@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 20:44:15 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/26 20:52:35 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/09/27 13:15:06 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,15 @@ void FragTrap::highFivesGuys()
 void FragTrap::attack(std::string const & target) 
 {
     std::cout << "FragTrap " << this->Name << " attack " << target << ", causing an insane amount of " << this->AttackDamage << "!!" << std::endl << std::endl;
+}
+
+std::string FragTrap::getName() const { return (this->Name); }
+int FragTrap::getHit() const { return  (this->Hit); }
+int FragTrap::getEnergyPoints() const { return (this->EnergyPoints); }
+int FragTrap::getAttackDamage() const { return (this->AttackDamage); }
+
+std::ostream&	operator<<(std::ostream & ostream, FragTrap const & src)
+{
+	ostream << "Hp: " << src.getHit() << " Ep: " << src.getEnergyPoints() << " Ad: " << src.getAttackDamage();
+	return (ostream);
 }

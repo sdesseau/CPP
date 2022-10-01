@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:21:16 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/23 21:33:23 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:48:24 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ public:
 	Fixed(const int value);
 	Fixed(Fixed const &fixed);
 	~Fixed();
+	Fixed &operator=(Fixed const &a);
 	int		toInt(void) const;
 	float 	toFloat() const;
 	int getRawBits(void) const;

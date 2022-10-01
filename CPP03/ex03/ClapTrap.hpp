@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:49:57 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/26 20:32:11 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/09/27 13:16:31 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,10 @@ class ClapTrap
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		std::string getName() const;
+		int getHit() const;
+		int getEnergyPoints() const;
+		int getAttackDamage() const;
 };
+
+std::ostream&	operator<<(std::ostream & ostream, ClapTrap const & src);

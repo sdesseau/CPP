@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:49:56 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/26 20:41:58 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/09/27 13:16:45 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,15 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->Name << " is repaired for " << amount << " points!" << std::endl;
 	this->Hit += amount;
 	std::cout << "Life Points up to " << this->Hit << "!!" << std::endl << std::endl;
+}
+
+std::string ClapTrap::getName() const { return (this->Name); }
+int ClapTrap::getHit() const { return  (this->Hit); }
+int ClapTrap::getEnergyPoints() const { return (this->EnergyPoints); }
+int ClapTrap::getAttackDamage() const { return (this->AttackDamage); }
+
+std::ostream&	operator<<(std::ostream & ostream, ClapTrap const & src)
+{
+	ostream << "Hp: " << src.getHit() << " Ep: " << src.getEnergyPoints() << " Ad: " << src.getAttackDamage();
+	return (ostream);
 }

@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 20:19:14 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/26 20:51:43 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/09/27 13:16:57 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,16 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(std::string const & target) 
 {
-    std::cout << "ScavTrap " << this->Name << " attack " << target << ", causing an insane amount of " << this->AttackDamage << "!!" << std::endl;
+    std::cout << "ScavTrap " << this->Name << " attack " << target << ", causing an insane amount of " << this->AttackDamage << "!!" << std::endl << std::endl;
+}
+
+std::string ScavTrap::getName() const { return (this->Name); }
+int ScavTrap::getHit() const { return  (this->Hit); }
+int ScavTrap::getEnergyPoints() const { return (this->EnergyPoints); }
+int ScavTrap::getAttackDamage() const { return (this->AttackDamage); }
+
+std::ostream&	operator<<(std::ostream & ostream, ScavTrap const & src)
+{
+	ostream << "Hp: " << src.getHit() << " Ep: " << src.getEnergyPoints() << " Ad: " << src.getAttackDamage();
+	return (ostream);
 }

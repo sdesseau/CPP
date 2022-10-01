@@ -7,9 +7,9 @@
 #                                     CONFIG                                   #
 ################################################################################
 
-NAME        := FragTrap
+NAME        := DiamondTrap
 CC         := c++
-FLAGS    := -Wall -Wextra -Werror -std=c++98
+FLAGS    := -Wall -Wextra -Werror -std=c++98 -Wno-shadow -Wshadow
  
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
