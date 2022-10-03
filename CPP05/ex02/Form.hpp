@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:47:58 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/01 14:24:33 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:13:25 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	public:
 		Form();
 		Form(const std::string name, int gradeSigned, int gradeExecute);
 		Form(Form const& src);
-		~Form();
+		virtual ~Form();
 		Form& operator=(Form const& src);
+		
 		void	beSigned(Bureaucrat const& bureaucrat);
 		void	signForm(Bureaucrat const& bureaucrat);
+
 		std::string	getName() const;
 		int	getSignedGrade() const;
 		int	getExecuteGrade() const;
 		bool	getSigned() const;
-		// void	setSign();
+
+        virtual void execute(Bureaucrat const &src) const = 0;
 	private:
 		const std::string _name;
 		bool _signed;

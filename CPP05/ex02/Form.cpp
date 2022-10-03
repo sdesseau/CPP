@@ -6,11 +6,10 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:47:56 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/01 14:34:06 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:07:24 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 Form::Form() : _name(""), _signed(false), _gradeSigned(150), _gradeExecute(150)
@@ -55,9 +54,6 @@ std::string	Form::getName() const { return (this->_name); }
 int	Form::getSignedGrade() const { return (this->_gradeSigned); }
 int	Form::getExecuteGrade() const { return (this->_gradeExecute); }
 bool	Form::getSigned() const { return (this->_signed); }
-
-// void	Form::setSign() { this->_signed = true; }
-
 
 void Form::beSigned(Bureaucrat const& bureaucrat)
 {

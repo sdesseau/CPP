@@ -6,44 +6,37 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:25:29 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/01 14:34:02 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:13:46 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
 
 int main()
 {
+	Bureaucrat boss("Boss", 1);
 	Bureaucrat originel("Wsh", 20);
 	Bureaucrat apprenti("larbin" ,150);
-	Form form("formulaire 36-50", 150, 30);
-	Form form2("formulaire chiant", 1, 1);
+	PresidentialPardonForm F6("Jean");
 
 	try
 	{
 		{
-			form.beSigned(apprenti);
-			form.signForm(originel);
+			// F6.beSigned(apprenti);		
+			F6.beSigned(originel);
+			F6.signForm(originel);
+			// F6.execute(originel);
+			F6.execute(boss);
 		}
 	}
 	catch(const std::invalid_argument& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-
-	try
-	{
-		{
-			form2.beSigned(originel);
-			form2.signForm(apprenti);
-		}
-	}
-	catch(const std::invalid_argument& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
 	
 	return (0);
 }
