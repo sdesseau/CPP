@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:26:36 by jcluzet           #+#    #+#             */
-/*   Updated: 2022/10/05 00:04:44 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/07 13:49:16 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
     else if (!this->getSigned())
 	{
         std::cout << this->getName() + " cannot be executed because it is not signed" << std::endl;
-        throw std::invalid_argument("Form::FormNotSignedException");;
+        throw std::invalid_argument("Form::FormNotSignedException");
     }
     std::cout << executor.getName() + " executes " + this->getName() << std::endl;
 

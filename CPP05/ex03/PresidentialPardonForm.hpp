@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 16:28:56 by jcluzet           #+#    #+#             */
-/*   Updated: 2022/10/05 00:40:04 by sdesseau         ###   ########.fr       */
+/*   Created: 2022/10/01 16:27:06 by jcluzet           #+#    #+#             */
+/*   Updated: 2022/10/03 15:49:57 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Form.hpp"
 
-class ShrubberyCreationForm : public Form
+class PresidentialPardonForm : public Form
 {
     public:
-		ShrubberyCreationForm();
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm const& src);
-		~ShrubberyCreationForm();
-		ShrubberyCreationForm& operator=(ShrubberyCreationForm const& src);
+		PresidentialPardonForm();
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(PresidentialPardonForm const& src);
+		~PresidentialPardonForm();
+		PresidentialPardonForm& operator=(PresidentialPardonForm const& src);
 		
 		std::string	getTarget() const;
 
@@ -30,4 +30,4 @@ class ShrubberyCreationForm : public Form
 		
 };
 
-std::ostream&	operator<<(std::ostream & ostream, ShrubberyCreationForm const & src);
+std::ostream&	operator<<(std::ostream & ostream, PresidentialPardonForm const & src);

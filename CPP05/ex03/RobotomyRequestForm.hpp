@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 16:28:56 by jcluzet           #+#    #+#             */
-/*   Updated: 2022/10/05 00:40:04 by sdesseau         ###   ########.fr       */
+/*   Created: 2022/10/01 16:27:59 by jcluzet           #+#    #+#             */
+/*   Updated: 2022/10/03 15:55:22 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Form.hpp"
 
-class ShrubberyCreationForm : public Form
+class RobotomyRequestForm : public Form
 {
     public:
-		ShrubberyCreationForm();
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm const& src);
-		~ShrubberyCreationForm();
-		ShrubberyCreationForm& operator=(ShrubberyCreationForm const& src);
+		RobotomyRequestForm();
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(RobotomyRequestForm const& src);
+		~RobotomyRequestForm();
+		RobotomyRequestForm& operator=(RobotomyRequestForm const& src);
 		
 		std::string	getTarget() const;
 
@@ -30,4 +30,4 @@ class ShrubberyCreationForm : public Form
 		
 };
 
-std::ostream&	operator<<(std::ostream & ostream, ShrubberyCreationForm const & src);
+std::ostream&	operator<<(std::ostream & ostream, RobotomyRequestForm const & src);
