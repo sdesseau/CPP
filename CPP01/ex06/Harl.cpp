@@ -29,21 +29,12 @@ void    Harl::complain(std::string level)
         case ('d'):
             std::cout << "[ DEBUG ]" << std::endl;
             Harl::debug();
-            Harl::info();
-            Harl::warning();
-            Harl::error();
-            break;
         case ('i'):
             std::cout << "[ INFO ]" << std::endl;
             Harl::info();
-            Harl::warning();
-            Harl::error();
-            break;
         case ('w'):
             std::cout << "[ WARNING ]" << std::endl;
             Harl::warning();
-            Harl::error();
-            break;
         case ('e'):
             std::cout << "[ ERROR ]" << std::endl;
             Harl::error();

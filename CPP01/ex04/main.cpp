@@ -37,13 +37,15 @@ int main(int argc, char **argv)
 {
     if (argc != 4 || argv[2] == NULL || argv[3] == NULL)
     {
-        std::cout << "Usage : ./a.out [FILE_NAME] [STRING 1] [STRING 2]..." << std::endl;
+        std::cout << "Usage : ./sed [FILE_NAME] [STRING 1] [STRING 2]..." << std::endl;
         return (1);
     }
     
     std::fstream oldFile;
     std::fstream newFile;
     std::string line;
+    std::string fileName = argv[1];
+    std::string newFileName = fileName.append(".replace");
 
     oldFile.open(argv[1], std::ios::in);
     if (!oldFile)
@@ -51,7 +53,7 @@ int main(int argc, char **argv)
         std::cout << "Error, couldn't find file..." << std::endl;
         return (1);
     }
-    newFile.open(argv[1] + std::string(".replace"), std::ios::out);
+    newFile.open(newFileName.c_str(), std::ios::out);
     if (!newFile)
     {
         std::cout << "Error, couldn't open new file..." << std::endl;

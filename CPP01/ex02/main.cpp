@@ -23,7 +23,7 @@ int main()
     std::cout << "Adresse stockee dans stringREF: " << &stringREF << std::endl << std::endl;
 
     std::cout << "Valeur pointee par String: " << String << std::endl;
-    std::cout << "Valeur pointee par stringPTR: " << stringPTR << std::endl;
+    std::cout << "Valeur pointee par stringPTR: " << *stringPTR << std::endl;
     std::cout << "Valeur pointee par stringREF: " << stringREF << std::endl;
     return (0);
 }

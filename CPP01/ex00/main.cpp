@@ -15,11 +15,11 @@
 int main(void)
 {
     // How to stock a var in the STACK
-    Zombie parent("Zombie parent");
+    randomChump("StackZombie");
     
     // How to stock a var in the HEAP
-    Zombie *child = parent.newZombie("child");
+    Zombie *heapZombie = newZombie("heapZombie");
 
-    delete child;
+    delete heapZombie;
     return (0);
 }
