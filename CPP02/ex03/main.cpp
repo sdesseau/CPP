@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:33:37 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/27 12:54:00 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/13 14:26:36 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@
 
 int main()
 {
-    // Point const a ;
-	// Point const b(5.04f, 12.08f);
-	// Point const c(3.75f, 25.96f);
-	// Point const point(3.75f, 11.034);
-
-	// std::cout << Point::bsp(a, b, c, point) << std::endl;
-	
-    // return 0;
-
 	Point P1; //default constructor P1 = (0 ; 0)
 	Point P2(Fixed(4.18f), Fixed(3.02f)); // Fixed constructor P2 = (4.18 ; 3.02)
 	Point P3(P2); // copy constructor P3 = P2 = (4.18 ; 3.02)

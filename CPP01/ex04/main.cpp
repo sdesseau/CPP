@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 20:14:57 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/22 20:49:41 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/13 14:18:09 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,10 @@ int main(int argc, char **argv)
     while (!oldFile.eof())
     {
         getline(oldFile, line);
-        newFile << replace(line, argv[2], argv[3]) << std::endl;
-    }  
+        newFile << replace(line, argv[2], argv[3]);
+		if (line.size() != 0)
+			newFile << std::endl;
+    }
     oldFile.close();
     newFile.close();
     return (0);
