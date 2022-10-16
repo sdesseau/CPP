@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:24:50 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/26 17:22:29 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/16 17:06:19 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ Fixed::~Fixed()
 
 Fixed Fixed::operator/(Fixed const &a)
 {
+	if (a.getRawBits() == 0)
+	{
+		std::cout << "Impossible: Division by 0..." << std::endl;
+		return (Fixed(0));
+	}
 	return (this->toFloat() / a.toFloat());
 }
 

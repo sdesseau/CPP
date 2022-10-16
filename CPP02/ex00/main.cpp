@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:33:37 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/23 18:34:16 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/16 17:00:09 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,11 @@ int main( void )
 	std::cout << a.getRawBits() << std::endl;
   	std::cout << b.getRawBits() << std::endl;
   	std::cout << c.getRawBits() << std::endl;
+
+	a.setRawBits(19);
+	std::cout << a.getRawBits() << std::endl;
+	
+	b = a;
+	std::cout << b.getRawBits() << std::endl;
 	return (0);
 }
