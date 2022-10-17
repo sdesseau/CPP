@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcluzet <jcluzet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:49:56 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/27 13:13:13 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:36:24 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,13 @@ const ClapTrap &ClapTrap::operator=(ClapTrap const &a)
 
 void ClapTrap::attack(const std::string& target)
 {
-	std::cout << "ClapTrap " << this->Name << " attack " << target << ", causing " << this->AttackDamage << " points of damage!" << std::endl << std::endl;
+    if (this->EnergyPoints != 0)
+    {
+	    std::cout << "ClapTrap " << this->Name << " attack " << target << ", causing " << this->AttackDamage << " points of damage!" << std::endl << std::endl;
+        this->EnergyPoints--;
+    }
+    else
+        std::cout << "ClapTrap " << this->Name << " is out of energy! He cannot attack..." << std::endl << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -62,9 +68,15 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "ClapTrap " << this->Name << " is repaired for " << amount << " points!" << std::endl;
-	this->Hit += amount;
-	std::cout << "Life Points up to " << this->Hit << "!!" << std::endl << std::endl;
+    if (this->EnergyPoints != 0)
+    {
+	    std::cout << "ClapTrap " << this->Name << " is repaired for " << amount << " points!" << std::endl;
+    	this->Hit += amount;
+    	std::cout << "Life Points up to " << this->Hit << "!!" << std::endl << std::endl;
+        this->EnergyPoints--;
+    }
+    else
+        std::cout << "ClapTrap " << this->Name << " is out of energy! He cannot be repaired..." << std::endl << std::endl;
 }
 
 std::string ClapTrap::getName() const { return (this->Name); }

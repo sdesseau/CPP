@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcluzet <jcluzet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 20:19:14 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/27 13:16:57 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:41:58 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,13 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(std::string const & target) 
 {
-    std::cout << "ScavTrap " << this->Name << " attack " << target << ", causing an insane amount of " << this->AttackDamage << "!!" << std::endl << std::endl;
+    if (this->EnergyPoints != 0)
+    {
+	    std::cout << "ScavTrap " << this->Name << " attack " << target << ", causing " << this->AttackDamage << " points of damage!" << std::endl << std::endl;
+        this->EnergyPoints--;
+    }
+    else
+        std::cout << "ScavTrap " << this->Name << " is out of energy! He cannot attack..." << std::endl << std::endl;
 }
 
 std::string ScavTrap::getName() const { return (this->Name); }

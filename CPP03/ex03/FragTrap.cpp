@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcluzet <jcluzet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 20:44:15 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/27 13:15:06 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:42:15 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,13 @@ void FragTrap::highFivesGuys()
 
 void FragTrap::attack(std::string const & target) 
 {
-    std::cout << "FragTrap " << this->Name << " attack " << target << ", causing an insane amount of " << this->AttackDamage << "!!" << std::endl << std::endl;
+    if (this->EnergyPoints != 0)
+    {
+	    std::cout << "FragTrap " << this->Name << " attack " << target << ", causing " << this->AttackDamage << " points of damage!" << std::endl << std::endl;
+        this->EnergyPoints--;
+    }
+    else
+        std::cout << "FragTrap " << this->Name << " is out of energy! He cannot attack..." << std::endl << std::endl;
 }
 
 std::string FragTrap::getName() const { return (this->Name); }
