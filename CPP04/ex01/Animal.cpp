@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:18:49 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/27 13:56:17 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:15:59 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Animal::Animal() : _type("Animal")
 {
-	std::cout << "Default Animal constructor called..." << std::endl << std::endl;
+	// std::cout << "Default Animal constructor called..." << std::endl << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Default Animal destructor called..." << std::endl;
+	// std::cout << "Default Animal destructor called..." << std::endl;
 };
 
 std::ostream&	operator<<(std::ostream & ostream, Animal const & src)
@@ -30,14 +30,14 @@ std::ostream&	operator<<(std::ostream & ostream, Animal const & src)
 
 Animal& Animal::operator=(Animal const& src)
 {
-    std::cout << "Assignation Animal operator called" << std::endl << std::endl;
+    // std::cout << "Assignation Animal operator called" << std::endl << std::endl;
 	this->_type = src.getType();
     return(*this);
 }
 
 Animal::Animal(Animal const& src)
 {
-    std::cout << "Animal copy constructor called" << std::endl << std::endl;
+    // std::cout << "Animal copy constructor called" << std::endl << std::endl;
 	this->_type = src.getType();
 }
 

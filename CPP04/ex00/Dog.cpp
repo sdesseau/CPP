@@ -6,15 +6,14 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:20:02 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/27 13:56:29 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:51:00 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : Animal("Dog")
 {
-	this->_type = "Dog";
 	std::cout << "Default Dog constructor called..." << std::endl << std::endl;
 }
 
@@ -36,10 +35,9 @@ Dog& Dog::operator=(Dog const& src)
     return(*this);
 }
 
-Dog::Dog(Dog const& src)
+Dog::Dog(Dog const& src) : Animal(src)
 {
     std::cout << "Dog copy constructor called" << std::endl << std::endl;
-	this->_type = src.getType();
 }
 
 void	Dog::makeSound() const

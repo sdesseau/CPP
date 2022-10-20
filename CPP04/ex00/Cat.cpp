@@ -6,15 +6,14 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:19:21 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/27 13:54:56 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:48:52 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal("Cat")
 {
-	this->_type = "Cat";
 	std::cout << "Default Cat constructor called..." << std::endl << std::endl;
 }
 
@@ -36,10 +35,9 @@ Cat& Cat::operator=(Cat const& src)
     return(*this);
 }
 
-Cat::Cat(Cat const& src)
+Cat::Cat(Cat const& src) : Animal(src)
 {
     std::cout << "Cat copy constructor called" << std::endl << std::endl;
-	this->_type = src.getType();
 }
 
 void	Cat::makeSound() const

@@ -7,9 +7,9 @@
 #                                     CONFIG                                   #
 ################################################################################
 
-NAME        := Animal
+NAME        := Brain
 CC         := c++
-FLAGS    := -Wall -Wextra -Werror -std=c++98
+FLAGS    := -Wall -Wextra -Werror -std=c++98 
  
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
@@ -19,9 +19,7 @@ SRCS        :=      Animal.cpp \
                           Cat.cpp \
                           Dog.cpp \
                           main.cpp \
-						WrongAnimal.cpp \
-						WrongCat.cpp \
-						Brain.cpp \
+						  Brain.cpp \
                           
 OBJS        := ${SRCS:.cpp=.o}
 

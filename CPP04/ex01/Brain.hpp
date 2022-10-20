@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 14:11:59 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/01 12:24:39 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:07:55 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ class Brain
 		Brain(Brain const& src);
 		~Brain();
 		Brain& operator=(Brain const& src);
+		const std::string& getIdea(int index) const;
 	private:
 		std::string _ideas[100];
 };
-
-std::ostream&	operator<<(std::ostream & ostream, Brain const & src);

@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:19:30 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/27 14:00:14 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:48:11 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ class Cat : public Animal
 		virtual ~Cat();
 		Cat& operator=(Cat const& src);
 		virtual void makeSound() const;
-
-	private:
-		std::string _type;
 };
 
 std::ostream&	operator<<(std::ostream & ostream, Cat const & src);

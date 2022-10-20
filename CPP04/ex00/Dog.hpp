@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:20:22 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/09/27 14:00:10 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:49:50 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ class Dog : public Animal
 		virtual ~Dog();
 		Dog& operator=(Dog const& src);
 		virtual void makeSound() const;
-
-	private:
-		std::string _type;
 };
 
 std::ostream&	operator<<(std::ostream & ostream, Dog const & src);
