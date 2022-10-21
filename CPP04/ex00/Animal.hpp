@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:18:16 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/19 17:47:13 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:07:35 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ class Animal
 {
 	public:
 		Animal();
+		Animal(std::string type) : _type(type) {};
 		Animal(Animal const& src);
 		virtual ~Animal();
 		Animal& operator=(Animal const& src);

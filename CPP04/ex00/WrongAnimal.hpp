@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 14:04:26 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/19 17:52:29 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:08:19 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ class WrongAnimal
 {
 	public:
 		WrongAnimal();
+		WrongAnimal(std::string type) : _type(type) {};
 		WrongAnimal(WrongAnimal const& src);
 		virtual ~WrongAnimal();
 		WrongAnimal& operator=(WrongAnimal const& src);

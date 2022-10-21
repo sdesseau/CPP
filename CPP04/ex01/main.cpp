@@ -6,15 +6,14 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:18:32 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/19 18:29:45 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:05:33 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstdlib>
 
 int main()
 {
