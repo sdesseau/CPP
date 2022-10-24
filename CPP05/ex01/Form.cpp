@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:47:56 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 19:30:58 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:31:33 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ bool	Form::getSigned() const { return (this->_signed); }
 
 void Form::beSigned(Bureaucrat const& bureaucrat)
 {
-	if (this->signed == true)
+	if (this->_signed == true)
 		throw std::invalid_argument("Form::AlreadySigned");
 	else if (bureaucrat.getGrade() <= this->getSignedGrade())
 		this->_signed = true;
