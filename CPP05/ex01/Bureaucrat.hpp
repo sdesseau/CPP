@@ -6,12 +6,15 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:00:08 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 15:18:09 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:22:24 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -23,8 +26,11 @@ class Bureaucrat
 		Bureaucrat& operator=(Bureaucrat const& src);
 		std::string getName() const;
 		int getGrade() const;
+
 		void	upgrade();
 		void	downgrade();
+		void 	signForm(Form const& Form) const;
+		
 	private:
 		const std::string _name;
 		int	_grade;

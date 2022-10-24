@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:47:56 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 15:38:15 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:24:23 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,8 @@ void Form::beSigned(Bureaucrat const& bureaucrat)
 		throw std::invalid_argument("Form::GradeTooLowException");
 }
 
-void Form::signForm(Bureaucrat const& bureaucrat)
-{
-	if (this->getSigned() == false)
-		std::cout << bureaucrat.getName() << " couldn't sign " << this->getName() << " because Form::GradeTooLowException" << std::endl;
-	else
-		std::cout << bureaucrat.getName() << " signed " << this->getName() << std::endl;
-}
-
 void Form::fullSign(Bureaucrat const& bureaucrat)
 {
 	beSigned(bureaucrat);
-	signForm(bureaucrat);
+	bureaucrat.signForm(*this);
 }

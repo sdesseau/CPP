@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:25:29 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/05 00:40:04 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:21:14 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,9 @@ int main()
 	try
 	{
 		{
-			// F6.beSigned(apprenti);		
-			F6.beSigned(originel);
-			F6.signForm(originel);		
-			F7.beSigned(originel);
-			F7.signForm(originel);		
-			F8.beSigned(originel);
-			F8.signForm(originel);
-			// F6.execute(originel);
+			F6.fullSign(originel);			
+			F7.fullSign(originel);
+			F8.fullSign(originel);
 			F6.execute(boss);
 			F7.execute(boss);
 			F8.execute(boss);

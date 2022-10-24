@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:25:29 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 15:23:28 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:11:24 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 	{
 		{
 			form.beSigned(apprenti);
-			form.signForm(originel);
+			apprenti.signForm(form);
 		}
 	}
 	catch(const std::invalid_argument& e)
@@ -36,7 +36,7 @@ int main()
 	{
 		{
 			form2.beSigned(originel);
-			form2.signForm(apprenti);
+			originel.signForm(form2);
 		}
 	}
 	catch(const std::invalid_argument& e)

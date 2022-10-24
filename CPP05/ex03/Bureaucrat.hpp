@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:00:08 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 15:18:53 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:24:03 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Bureaucrat
 		
 		void	upgrade();
 		void	downgrade();
+		void 	signForm(Form const& Form) const;
 		void	executeForm(Form const & form);
 	private:
 		const std::string _name;

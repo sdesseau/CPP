@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:47:58 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 15:48:23 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:24:33 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Form
 		Form& operator=(Form const& src);
 		
 		void	beSigned(Bureaucrat const& bureaucrat);
-		void	signForm(Bureaucrat const& bureaucrat);
 		void	fullSign(Bureaucrat const& bureaucrat);
 
 

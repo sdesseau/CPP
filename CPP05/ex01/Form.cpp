@@ -6,11 +6,10 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:47:56 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 15:31:27 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:15:13 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 Form::Form() : _name(""), _signed(false), _gradeSigned(150), _gradeExecute(150)
@@ -70,16 +69,8 @@ void Form::beSigned(Bureaucrat const& bureaucrat)
 		throw std::invalid_argument("Form::GradeTooLowException");
 }
 
-void Form::signForm(Bureaucrat const& bureaucrat)
-{
-	if (this->getSigned() == false)
-		std::cout << bureaucrat.getName() << " couldn't sign " << this->getName() << " because Form::GradeTooLowException" << std::endl;
-	else
-		std::cout << bureaucrat.getName() << " signed " << this->getName() << std::endl;
-}
-
-void Form::fullSign(Bureaucrat const& bureaucrat)
+void Form::fullSign(Bureaucrat& bureaucrat)
 {
 	beSigned(bureaucrat);
-	signForm(bureaucrat);
+	bureaucrat.signForm(*this);
 }
