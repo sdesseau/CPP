@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:28:21 by jcluzet           #+#    #+#             */
-/*   Updated: 2022/10/24 15:47:39 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:02:51 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,22 +57,22 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() > this->getExecuteGrade())
     {
-        std::cout << executor.getName() + " are not high enough to execute this form" << std::endl;
+        std::cout << executor.getName() << " grade is not high enough to execute this form" << std::endl;
         throw std::invalid_argument("Form::GradeTooLowException");
     }
     else if (!this->getSigned())
 	{
-        std::cout << this->getName() + " cannot be executed because it is not signed" << std::endl;
+        std::cout << this->getName() << " cannot be executed because it is not signed" << std::endl;
         throw std::invalid_argument("Form::FormNotSignedException");
     }
-    std::cout << executor.getName() + " executes " + this->getName() << std::endl;
+    std::cout << executor.getName() << " executes " << this->getName() << std::endl;
 
     std::fstream file;
     file.open(this->_target + "_shrubbery", std::fstream::out);
 
     if (!file)
     {
-        std::cout << "Error while creating " + this->_target + "_shrubbery file" << std::endl;
+        std::cout << "Error while creating " << this->_target << "_shrubbery file" << std::endl;
         throw std::invalid_argument("Form::ErrorFileException");
     }
 

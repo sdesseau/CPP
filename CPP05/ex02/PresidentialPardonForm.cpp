@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:26:36 by jcluzet           #+#    #+#             */
-/*   Updated: 2022/10/24 15:47:32 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:02:51 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,15 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() > this->getExecuteGrade())
     {
-        std::cout << executor.getName() + " are not high enough to execute this form" << std::endl;
+        std::cout << executor.getName() << " grade is not high enough to execute this form" << std::endl;
         throw std::invalid_argument("Form::GradeTooLowException");
     }
     else if (!this->getSigned())
 	{
-        std::cout << this->getName() + " cannot be executed because it is not signed" << std::endl;
-        throw std::invalid_argument("Form::FormNotSignedException");;
+        std::cout << this->getName() << " cannot be executed because it is not signed" << std::endl;
+        throw std::invalid_argument("Form::FormNotSignedException");
     }
-    std::cout << executor.getName() + " executes " + this->getName() << std::endl;
+    std::cout << executor.getName() << " executes " << this->getName() << std::endl;
 
-    std::cout << this->getTarget() + " has been pardoned by Zafod Beeblebrox." << std::endl;
+    std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }

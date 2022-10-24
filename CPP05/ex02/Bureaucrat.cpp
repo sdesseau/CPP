@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:00:06 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 19:22:37 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:03:55 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	Bureaucrat::downgrade()
 void Bureaucrat::signForm(Form const& Form) const
 {
 	if (Form.getSigned() == false)
-		std::cout << this->getName() << " couldn't sign " << this->getName() << " because this->:GradeTooLowException" << std::endl;
+		std::cout << this->getName() << " couldn't sign " << this->getName() << " because Form::GradeTooLowException" << std::endl;
 	else
 		std::cout << this->getName() << " signed " << Form.getName() << std::endl;
 }
