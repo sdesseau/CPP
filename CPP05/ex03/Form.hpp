@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:47:58 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/03 16:13:25 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:48:23 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class Form
 		
 		void	beSigned(Bureaucrat const& bureaucrat);
 		void	signForm(Bureaucrat const& bureaucrat);
+		void	fullSign(Bureaucrat const& bureaucrat);
+
 
 		std::string	getName() const;
 		int	getSignedGrade() const;
@@ -34,7 +36,7 @@ class Form
 		bool	getSigned() const;
 
         virtual void execute(Bureaucrat const &src) const = 0;
-	private:
+	protected:
 		const std::string _name;
 		bool _signed;
 		int	_gradeSigned;

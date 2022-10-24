@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:26:36 by jcluzet           #+#    #+#             */
-/*   Updated: 2022/10/07 13:49:16 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:47:16 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 25, 5), _target("")
 {
-	std::cout << "Default PresidentialPardonForm constructor called..." << std::endl;
+	if (MSG > 0)
+	    std::cout << "Default PresidentialPardonForm constructor called..." << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 25, 5), _target(target)
 {
-	std::cout << "Default PresidentialPardonForm(with grades) constructor called..." << std::endl;
+	if (MSG > 0)
+	    std::cout << "Default PresidentialPardonForm(with target) constructor called..." << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "Default PresidentialPardonForm destructor called..." << std::endl;
+	if (MSG > 0)
+	    std::cout << "Default PresidentialPardonForm destructor called..." << std::endl;
 }
 
 std::ostream&	operator<<(std::ostream & ostream, PresidentialPardonForm const & src)
@@ -36,13 +39,15 @@ std::ostream&	operator<<(std::ostream & ostream, PresidentialPardonForm const & 
 PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const& src)
 {
 	this->_target = src._target;
-    std::cout << "Assignation PresidentialPardonForm operator called" << std::endl << std::endl;
+	if (MSG > 0)
+        std::cout << "Assignation PresidentialPardonForm operator called" << std::endl << std::endl;
     return(*this);
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& src) : Form(src), _target(src.getTarget())
 {
-    std::cout << "PresidentialPardonForm copy constructor called" << std::endl << std::endl;
+	if (MSG > 0)
+        std::cout << "PresidentialPardonForm copy constructor called" << std::endl << std::endl;
 }
 
 std::string PresidentialPardonForm::getTarget() const { return (this->_target); }

@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:25:29 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/05 00:48:38 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:53:51 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,18 @@
 
 int main()
 {
-	Bureaucrat boss("Boss", 1);
-	
-	Intern  someRandomIntern;
-    Form*   rrf;
-    rrf = someRandomIntern.makeForm("Robotomy request", "Bender");
-
-	try
-	{
-		{
-			rrf->beSigned(boss);
-			rrf->signForm(boss);
-			rrf->execute(boss);
-		}
-	}
-	catch(const std::invalid_argument& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
+  try{
+        Bureaucrat josh("josh", 1);
+        Intern someRandomIntern;
+        Form* rrf;
+        rrf = someRandomIntern.makeForm("PresidentialPardon", "tree");
+		rrf->fullSign(josh);
+        rrf->execute(josh);
+    }
+    catch(const std::invalid_argument& e)
+    {
+        std::cout  << e.what() << std::endl;
+    }
+    
 	return (0);
 }

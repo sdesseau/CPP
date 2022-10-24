@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 00:23:06 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/05 00:44:02 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:52:44 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 
 Intern::Intern()
 {
-	std::cout << "Default Intern constructor called..." << std::endl;
+	if (MSG > 0)
+		std::cout << "Default Intern constructor called..." << std::endl;
 }
 
 Intern::~Intern()
 {
-	std::cout << "Default Intern destructor called..." << std::endl;
-}
-
-std::ostream&	operator<<(std::ostream & ostream, Intern const & src)
-{
-	(void)src;
-	ostream << "Intern";
-	return (ostream);
+	if (MSG > 0)
+		std::cout << "Default Intern destructor called..." << std::endl;
 }
 
 Intern& Intern::operator=(Intern const& src)
@@ -39,32 +34,46 @@ Intern& Intern::operator=(Intern const& src)
 Intern::Intern(Intern const& src)
 {
 	*this = src;
-    std::cout << "Intern copy constructor called" << std::endl << std::endl;
+	if (MSG > 0)
+    	std::cout << "Intern copy constructor called" << std::endl << std::endl;
 }
 
 Form *Intern::makeForm(std::string formType, std::string formTarget)
 {
-	switch (formType[0])
+	int lvl = -1;
+	std::string differentForm[] = {
+		"PresidentialPardon",
+		"RobotomyRequest",
+		"ShruberryCreation"
+	};
+
+	for (int i = 0; i < 3; i++)
 	{
-		case 'P':
+		if (formType == differentForm[i])
+			lvl = i;
+	}
+	
+	switch (lvl)
+	{
+		case 0:
 		{
 			Form	*president = new PresidentialPardonForm(formTarget);
 			return (president);
 		}
-		case 'R':
+		case 1:
 		{
 			Form	*robot = new RobotomyRequestForm(formTarget);
 			return (robot);
 		}
-		case 'S':
+		case 2:
 		{
 			Form	*shrubbery = new ShrubberyCreationForm(formTarget);
 			return (shrubbery);
 		}
 		default:
 		{
-			std::cout << "Intern can't make a form \"" << formType << "\" this form type doesn't exist." << std::endl;
-			return (NULL);
+			std::cout << "Intern can't make a form \"" << formType << "\", this form type doesn't exist." << std::endl;
+			throw std::invalid_argument("Intern::Form::FormDontExist");
 		}
 	}
 }

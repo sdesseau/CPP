@@ -9,7 +9,7 @@
 
 NAME        := Form
 CC         := c++
-FLAGS    := -Wall -Wextra -Werror -std=c++98
+FLAGS    := -Wall -Wextra -Werror -std=c++98 -D MSG=1
  
 ################################################################################
 #                                 PROGRAM'S SRCS                               #

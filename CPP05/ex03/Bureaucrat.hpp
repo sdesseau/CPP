@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:00:08 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/05 17:59:40 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:18:53 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ class Bureaucrat
 {
 	public:
 		Bureaucrat();
-		Bureaucrat(const std::string name);
-		Bureaucrat(int grade);
 		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(Bureaucrat const& src);
 		~Bureaucrat();

@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 00:22:47 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/05 00:39:33 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:02:05 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,3 @@ class Intern
         Form	*makeForm(std::string formType, std::string formTarget);
         Intern&     operator=(Intern const & src);
 };
-
-std::ostream    &operator<<(std::ostream &ostream, const Intern &src);

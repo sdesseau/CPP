@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:28:21 by jcluzet           #+#    #+#             */
-/*   Updated: 2022/10/05 00:40:04 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:47:39 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 72, 45), _target("")
 {
-	std::cout << "Default ShrubberyCreationForm constructor called..." << std::endl;
+	if (MSG > 0)
+	    std::cout << "Default ShrubberyCreationForm constructor called..." << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 72, 45), _target(target)
 {
-	std::cout << "Default ShrubberyCreationForm(with grades) constructor called..." << std::endl;
+	if (MSG > 0)
+	    std::cout << "Default ShrubberyCreationForm(with target) constructor called..." << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "Default ShrubberyCreationForm destructor called..." << std::endl;
+	if (MSG > 0)
+	    std::cout << "Default ShrubberyCreationForm destructor called..." << std::endl;
 }
 
 std::ostream&	operator<<(std::ostream & ostream, ShrubberyCreationForm const & src)
@@ -37,13 +40,15 @@ std::ostream&	operator<<(std::ostream & ostream, ShrubberyCreationForm const & s
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const& src)
 {
 	this->_target = src._target;
-    std::cout << "Assignation ShrubberyCreationForm operator called" << std::endl << std::endl;
+	if (MSG > 0)
+        std::cout << "Assignation ShrubberyCreationForm operator called" << std::endl << std::endl;
     return(*this);
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& src) : Form(src), _target(src.getTarget())
 {
-    std::cout << "ShrubberyCreationForm copy constructor called" << std::endl << std::endl;
+	if (MSG > 0)
+        std::cout << "ShrubberyCreationForm copy constructor called" << std::endl << std::endl;
 }
 
 std::string ShrubberyCreationForm::getTarget() const { return (this->_target); }

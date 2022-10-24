@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:27:44 by jcluzet           #+#    #+#             */
-/*   Updated: 2022/10/05 00:08:49 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:47:24 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45), _target("")
 {
-	std::cout << "Default RobotomyRequestForm constructor called..." << std::endl;
+	if (MSG > 0)
+	    std::cout << "Default RobotomyRequestForm constructor called..." << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45), _target(target)
 {
-	std::cout << "Default RobotomyRequestForm(with grades) constructor called..." << std::endl;
+	if (MSG > 0)
+	    std::cout << "Default RobotomyRequestForm(with target) constructor called..." << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "Default RobotomyRequestForm destructor called..." << std::endl;
+	if (MSG > 0)
+	    std::cout << "Default RobotomyRequestForm destructor called..." << std::endl;
 }
 
 std::ostream&	operator<<(std::ostream & ostream, RobotomyRequestForm const & src)
@@ -36,13 +39,15 @@ std::ostream&	operator<<(std::ostream & ostream, RobotomyRequestForm const & src
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& src)
 {
 	this->_target = src._target;
-    std::cout << "Assignation RobotomyRequestForm operator called" << std::endl << std::endl;
+	if (MSG > 0)
+        std::cout << "Assignation RobotomyRequestForm operator called" << std::endl << std::endl;
     return(*this);
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& src) : Form(src), _target(src.getTarget())
 {
-    std::cout << "RobotomyRequestForm copy constructor called" << std::endl << std::endl;
+	if (MSG > 0)
+        std::cout << "RobotomyRequestForm copy constructor called" << std::endl << std::endl;
 }
 
 std::string RobotomyRequestForm::getTarget() const { return (this->_target); }
