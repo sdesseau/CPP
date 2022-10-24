@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:25:29 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 19:11:24 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:35:58 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,15 @@ int main()
 	}
 	
 	Bureaucrat Boss("Boss", 1);
+
+	try
+	{
+		form2.fullSign(Boss);
+	}
+	catch(const std::invalid_argument& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
 	try
 	{

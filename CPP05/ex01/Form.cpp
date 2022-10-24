@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:47:56 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 19:31:33 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:37:35 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ Form::Form() : _name(""), _signed(false), _gradeSigned(150), _gradeExecute(150)
 
 Form::Form(const std::string name, int gradeSigned, int gradeExecute) : _name(name), _signed(false), _gradeSigned(gradeSigned), _gradeExecute(gradeExecute)
 {
+	if (this->_gradeSigned > 150 || this->_gradeExecute > 150)
+		throw std::invalid_argument("Form::GradeTooLowException");
+	if (this->_gradeSigned <= 0 || this->_gradeExecute <= 0)
+		throw std::invalid_argument("Form::GradeTooHighException");
 	if (MSG > 0)
 		std::cout << "Default Form(with grades) constructor called..." << std::endl;
 }
