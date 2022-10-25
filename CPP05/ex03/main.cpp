@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:25:29 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 15:53:51 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:21:01 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
         rrf = someRandomIntern.makeForm("PresidentialPardon", "tree");
 		rrf->fullSign(josh);
         rrf->execute(josh);
+        delete rrf;
     }
     catch(const std::invalid_argument& e)
     {

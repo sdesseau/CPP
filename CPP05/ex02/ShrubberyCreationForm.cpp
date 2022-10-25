@@ -6,14 +6,14 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:28:21 by jcluzet           #+#    #+#             */
-/*   Updated: 2022/10/24 20:02:51 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:21:26 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 72, 45), _target("")
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137), _target("")
 {
 	if (MSG > 0)
 	    std::cout << "Default ShrubberyCreationForm constructor called..." << std::endl;
@@ -68,7 +68,8 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     std::cout << executor.getName() << " executes " << this->getName() << std::endl;
 
     std::fstream file;
-    file.open(this->_target + "_shrubbery", std::fstream::out);
+    std::string newFileName = this->getTarget() + "_shruberry";
+    file.open(newFileName.c_str(), std::fstream::out);
 
     if (!file)
     {

@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:25:29 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 15:26:09 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:18:12 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 int main()
 {
-	Bureaucrat test;
-	Bureaucrat originel("Wsh", 3);
-	Bureaucrat originel2("Wsh2", 149);
 	
 	try
 	{
+		Bureaucrat test;
 		Bureaucrat B1("B1", 3);
 	}
 	catch(const std::invalid_argument& e)
@@ -47,6 +45,7 @@ int main()
 
 	try
 	{
+		Bureaucrat originel("Wsh", 3);
 		originel.upgrade();
 		originel.upgrade();
 		// originel.upgrade();
@@ -58,6 +57,7 @@ int main()
 
 	try
 	{
+		Bureaucrat originel2("Wsh2", 149);
 		originel2.downgrade();
 		// originel2.downgrade();
 	}

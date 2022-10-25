@@ -6,12 +6,13 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:47:58 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 19:56:23 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:18:56 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include <cstdlib>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
