@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:25:29 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 19:21:14 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:01:07 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,32 @@
 int main()
 {
 	Bureaucrat boss("Boss", 1);
-	Bureaucrat originel("Wsh", 20);
-	Bureaucrat apprenti("larbin" ,150);
 	PresidentialPardonForm F6("Jean");
 	RobotomyRequestForm F7("Pierre");
-	ShrubberyCreationForm F8("Duplex");
+	ShrubberyCreationForm F8("Jardin");
+
+	Form *F9 = new PresidentialPardonForm("target");
 
 	try
 	{
 		{
-			F6.fullSign(originel);			
-			F7.fullSign(originel);
-			F8.fullSign(originel);
+			F6.fullSign(boss);			
+			F7.fullSign(boss);
+			F8.fullSign(boss);
 			F6.execute(boss);
 			F7.execute(boss);
 			F8.execute(boss);
+
+			F9->fullSign(boss);
+			F9->execute(boss);
 		}
 	}
 	catch(const std::invalid_argument& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
+
+	delete F9;
 	
 	return (0);
 }

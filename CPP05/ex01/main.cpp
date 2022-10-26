@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:25:29 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/24 19:35:58 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/10/26 17:54:48 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,14 @@
 
 int main()
 {
-	Bureaucrat originel("Wsh", 20);
-	Bureaucrat apprenti("larbin" ,150);
+	Bureaucrat cardre("Cadre", 20);
+	Bureaucrat apprenti("Apprenti" ,150);
 	Form form("formulaire 150-30", 150, 30);
 	Form form2("formulaire chiant", 1, 1);
 
 	try
 	{
-		{
-			form.beSigned(apprenti);
-			apprenti.signForm(form);
-		}
+		form.fullSign(apprenti);
 	}
 	catch(const std::invalid_argument& e)
 	{
@@ -34,10 +31,7 @@ int main()
 
 	try
 	{
-		{
-			form2.beSigned(originel);
-			originel.signForm(form2);
-		}
+		form2.fullSign(apprenti);
 	}
 	catch(const std::invalid_argument& e)
 	{
