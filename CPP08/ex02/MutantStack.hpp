@@ -6,7 +6,7 @@
 /*   By: sdesseau <sdesseau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:26:13 by sdesseau          #+#    #+#             */
-/*   Updated: 2022/10/31 15:50:42 by sdesseau         ###   ########.fr       */
+/*   Updated: 2022/11/01 16:54:47 by sdesseau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class MutantStack : public std::stack<T>
         iterator begin() { return this->c.begin(); }
         iterator end() { return this->c.end(); }
 
+
+    	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
         iterator begin() const { return this->c.begin(); }
         iterator end() const { return this->c.end(); }
     
